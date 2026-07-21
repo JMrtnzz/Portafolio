@@ -2,12 +2,26 @@
 
 Portafolio personal de **Juanse Martínez** (marca **RocKG**): proyectos web, FiveM, herramientas RP y streaming en Kick.
 
+**Producción:** [portafolio-nine-blue-65.vercel.app](https://portafolio-nine-blue-65.vercel.app/)
+
 ## Stack
 
-- Next.js 15 (App Router)
-- React 19 + TypeScript
-- Tailwind CSS 4
-- Framer Motion
+| Tecnología | Uso |
+|------------|-----|
+| [Next.js 15](https://nextjs.org/) | App Router + Turbopack |
+| [React 19](https://react.dev/) + TypeScript | UI tipada |
+| [Tailwind CSS 4](https://tailwindcss.com/) | Estilos |
+| [Framer Motion](https://www.framer.com/motion/) | Animaciones |
+
+## Secciones del sitio
+
+- Hero y marca RocKG
+- Marquee / about
+- Proyectos con filtros por categoría
+- Skills / stack
+- Contacto y enlaces
+- Bloque de stream (Kick / alertas)
+- Nav, scroll progress y cursor glow
 
 ## Desarrollo local
 
@@ -16,23 +30,31 @@ npm install
 npm run dev
 ```
 
-Abrí [http://localhost:3000](http://localhost:3000).
+Abre [http://localhost:3000](http://localhost:3000).
 
-## Build
+## Scripts
 
-```bash
-npm run build
-npm start
-```
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Servidor de desarrollo (Turbopack) |
+| `npm run build` | Build de producción |
+| `npm start` | Servir build |
+| `npm run lint` | ESLint |
+
+## Editar contenido
+
+| Archivo | Contenido |
+|---------|-----------|
+| [`src/data/site.ts`](src/data/site.ts) | Datos del sitio y redes |
+| [`src/data/projects.ts`](src/data/projects.ts) | Proyectos destacados |
+| [`src/data/skills.ts`](src/data/skills.ts) | Stack / skills |
 
 ## Deploy en Vercel
 
-1. Empujá este repo a GitHub (`JMrtnzz/Portafolio`).
-2. En [vercel.com](https://vercel.com): **Add New Project** → importá el repo.
-3. Framework: **Next.js** (detectado automático). Root: `.`
-4. Deploy. Luego podés enlazar un dominio custom.
-
-Opcional con CLI:
+1. Empuja el repo a GitHub (`JMrtnzz/Portafolio`).
+2. En [vercel.com](https://vercel.com): **Add New Project** → importa el repo.
+3. Framework: **Next.js** (auto-detectado). Root: `.`
+4. Deploy. Opcional: dominio custom.
 
 ```bash
 npx vercel
@@ -44,9 +66,3 @@ npx vercel
 - Redes: https://guns.lol/RocKG
 - GitHub: https://github.com/JMrtnzz
 - Email: xRocKGx@gmail.com
-
-## Editar contenido
-
-- Datos del sitio / redes: [`src/data/site.ts`](src/data/site.ts)
-- Proyectos: [`src/data/projects.ts`](src/data/projects.ts)
-- Stack: [`src/data/skills.ts`](src/data/skills.ts)
