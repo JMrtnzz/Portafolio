@@ -29,6 +29,6 @@ export const skills: SkillGroup[] = [
   },
   {
     title: "Herramientas",
-    items: ["Git", "GitHub Actions", "Vercel", "Docker", "Discord.py", "Kick API"],
+    items: ["Git", "GitHub Actions", "Vercel", "Docker", "Discord.py", "SEO"],
   },
 ];

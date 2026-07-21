@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 
 const links = [
   { href: "#proyectos", label: "Proyectos" },
-  { href: "#stream", label: "Stream" },
+  { href: "#sobre", label: "Sobre mí" },
   { href: "#stack", label: "Stack" },
   { href: "#contacto", label: "Contacto" },
 ];
@@ -23,12 +23,15 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? "bg-ink/90 backdrop-blur-md border-b border-line" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled || open ? "border-b border-line bg-ink/90 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <nav className="section-pad container-narrow flex h-16 items-center justify-between">
-        <a href="#top" className="font-display text-lg font-bold tracking-tight text-paper">
+        <a
+          href="#top"
+          className="font-display text-lg font-bold tracking-tight text-paper transition hover:text-rockg"
+        >
           {site.brand}
         </a>
 
@@ -37,7 +40,7 @@ export function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-muted transition-colors hover:text-paper"
+                className="relative text-sm text-muted transition-colors hover:text-paper after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-rockg after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -45,20 +48,17 @@ export function Nav() {
           ))}
           <li>
             <a
-              href={site.links.kick}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-kick px-3.5 py-1.5 text-sm font-semibold text-ink transition hover:brightness-110"
+              href={`mailto:${site.email}`}
+              className="rounded-sm bg-paper px-3.5 py-1.5 text-sm font-semibold text-ink transition hover:bg-white"
             >
-              <span className="live-pulse size-1.5 rounded-full bg-ink" aria-hidden />
-              Kick
+              Hablemos
             </a>
           </li>
         </ul>
 
         <button
           type="button"
-          className="md:hidden text-paper text-sm"
+          className="text-sm text-paper md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -83,13 +83,11 @@ export function Nav() {
             ))}
             <li>
               <a
-                href={site.links.kick}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-kick font-semibold"
+                href={`mailto:${site.email}`}
+                className="font-semibold text-rockg"
                 onClick={() => setOpen(false)}
               >
-                Ver en Kick
+                Hablemos
               </a>
             </li>
           </ul>

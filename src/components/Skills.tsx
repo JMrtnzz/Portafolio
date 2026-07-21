@@ -23,21 +23,26 @@ export function Skills() {
           {skills.map((group, i) => (
             <motion.div
               key={group.title}
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.05 }}
+              transition={{ duration: 0.45, delay: i * 0.07 }}
               className="border-t border-line pt-6"
             >
               <h3 className="font-display text-lg font-semibold text-paper">{group.title}</h3>
               <ul className="mt-4 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <li
+                {group.items.map((item, j) => (
+                  <motion.li
                     key={item}
-                    className="rounded-sm border border-line px-2.5 py-1 text-sm text-muted"
+                    initial={{ opacity: 0, scale: 0.92 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.05 + j * 0.03 }}
+                    whileHover={{ y: -2, borderColor: "rgba(225,6,0,0.45)" }}
+                    className="rounded-sm border border-line px-2.5 py-1 text-sm text-muted transition hover:text-paper"
                   >
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </motion.div>

@@ -11,48 +11,68 @@ import {
 const filters: Array<"todos" | ProjectCategory> = [
   "todos",
   "cliente",
-  "streaming",
   "rp",
   "fivem",
   "experimental",
+  "streaming",
 ];
 
 export function Projects() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("todos");
 
-  const visible = useMemo(
-    () => (filter === "todos" ? projects : projects.filter((p) => p.category === filter)),
-    [filter],
-  );
+  const visible = useMemo(() => {
+    const list =
+      filter === "todos" ? projects : projects.filter((p) => p.category === filter);
+    // Client work first when showing all
+    if (filter === "todos") {
+      return [...list].sort((a, b) => {
+        const rank = (c: string) =>
+          c === "cliente" ? 0 : c === "rp" ? 1 : c === "fivem" ? 2 : c === "experimental" ? 3 : 4;
+        return rank(a.category) - rank(b.category);
+      });
+    }
+    return list;
+  }, [filter]);
 
   return (
     <section id="proyectos" className="section-pad py-24 md:py-32">
       <div className="container-narrow">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
             <p className="mb-3 text-sm uppercase tracking-[0.22em] text-rockg">Proyectos</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-paper md:text-5xl">
               Trabajo seleccionado
             </h2>
-          </div>
+          </motion.div>
 
           <div className="flex flex-wrap gap-2">
             {filters.map((key) => {
-              const label = key === "todos" ? "Todos" : categoryLabels[key];
+              const label =
+                key === "todos"
+                  ? "Todos"
+                  : key === "streaming"
+                    ? "Otros"
+                    : categoryLabels[key];
               const active = filter === key;
               return (
-                <button
+                <motion.button
                   key={key}
                   type="button"
                   onClick={() => setFilter(key)}
+                  whileTap={{ scale: 0.96 }}
                   className={`rounded-sm px-3 py-1.5 text-sm transition ${
                     active
-                      ? "bg-paper text-ink font-semibold"
-                      : "text-muted hover:text-paper border border-line"
+                      ? "bg-paper font-semibold text-ink"
+                      : "border border-line text-muted hover:text-paper"
                   }`}
                 >
                   {label}
-                </button>
+                </motion.button>
               );
             })}
           </div>
@@ -64,16 +84,17 @@ export function Projects() {
               <motion.li
                 key={project.id}
                 layout
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.35, delay: index * 0.03 }}
-                className="group border-t border-line py-7 last:border-b"
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 12 }}
+                transition={{ duration: 0.4, delay: index * 0.04 }}
+                className="group relative border-t border-line last:border-b"
               >
-                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+                <div className="absolute inset-y-0 left-0 w-0 bg-rockg/10 transition-all duration-300 group-hover:w-full" />
+                <div className="relative flex flex-col gap-4 py-7 transition-transform duration-300 group-hover:translate-x-2 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-3">
-                      <h3 className="font-display text-xl font-semibold text-paper md:text-2xl">
+                      <h3 className="font-display text-xl font-semibold text-paper transition group-hover:text-rockg md:text-2xl">
                         {project.title}
                       </h3>
                       <span className="text-xs uppercase tracking-wider text-muted">
@@ -86,15 +107,15 @@ export function Projects() {
                     <p className="mt-3 text-xs text-muted/80">{project.stack.join(" · ")}</p>
                   </div>
 
-                  <div className="flex shrink-0 gap-4 text-sm">
+                  <div className="flex shrink-0 items-center gap-4 text-sm">
                     {project.live && (
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-kick transition hover:underline"
+                        className="font-medium text-rockg transition hover:underline"
                       >
-                        Demo
+                        Demo →
                       </a>
                     )}
                     {project.github && (
