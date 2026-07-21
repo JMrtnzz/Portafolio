@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 
@@ -30,9 +31,19 @@ export function Nav() {
       <nav className="section-pad container-narrow flex h-16 items-center justify-between">
         <a
           href="#top"
-          className="font-display text-lg font-bold tracking-tight text-paper transition hover:text-rockg"
+          className="group flex items-center gap-2.5 transition hover:opacity-90"
         >
-          {site.brand}
+          <Image
+            src="/logo-full.png"
+            alt=""
+            width={36}
+            height={36}
+            className="size-9 rounded-full shadow-[0_0_18px_rgba(225,6,0,0.35)] transition group-hover:shadow-[0_0_24px_rgba(225,6,0,0.55)]"
+            priority
+          />
+          <span className="font-display text-lg font-bold tracking-tight text-paper group-hover:text-rockg transition-colors">
+            {site.brand}
+          </span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

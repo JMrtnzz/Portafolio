@@ -29,15 +29,19 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     siteName: site.brand,
+    images: [{ url: "/logo-full.png", width: 512, height: 512, alt: site.brand }],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: `${site.brand} · ${site.name}`,
     description: site.description,
     creator: "@xRocKGx",
+    images: ["/logo-full.png"],
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/logo-full.png", type: "image/png" }],
+    apple: [{ url: "/logo-full.png" }],
+    shortcut: "/logo-full.png",
   },
 };
 

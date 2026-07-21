@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect } from "react";
 import { site } from "@/data/site";
@@ -42,6 +43,29 @@ export function Hero() {
       />
 
       <div className="section-pad container-narrow relative z-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.82, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.75, ease }}
+          className="mb-8 md:mb-10"
+        >
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+            className="relative inline-block"
+          >
+            <div className="absolute inset-0 rounded-full bg-rockg/30 blur-2xl" aria-hidden />
+            <Image
+              src="/logo-full.png"
+              alt={`${site.brand} logo`}
+              width={160}
+              height={160}
+              priority
+              className="relative size-24 rounded-full drop-shadow-[0_0_40px_rgba(225,6,0,0.45)] md:size-36"
+            />
+          </motion.div>
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
