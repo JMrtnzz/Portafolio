@@ -42,8 +42,8 @@ export function Contact() {
             ¿Tenés un proyecto en mente?
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-            Escribime por email, Discord o X. Abierto a sitios corporativos, landings,
-            herramientas web y automatizaciones.
+            Escribime por email, Discord o X. Abierto a sitios corporativos, SaaS, herramientas
+            RP, automatizaciones de stream y recursos FiveM.
           </p>
         </motion.div>
 

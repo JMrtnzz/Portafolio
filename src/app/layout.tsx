@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.brand}`,
   },
   description: site.description,
-  metadataBase: new URL("https://portafolio-jmrtnzz.vercel.app"),
+  metadataBase: new URL("https://portafolio-nine-blue-65.vercel.app"),
   openGraph: {
     title: `${site.brand} · ${site.name}`,
     description: site.description,

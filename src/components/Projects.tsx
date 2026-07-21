@@ -21,17 +21,8 @@ export function Projects() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("todos");
 
   const visible = useMemo(() => {
-    const list =
-      filter === "todos" ? projects : projects.filter((p) => p.category === filter);
-    // Client work first when showing all
-    if (filter === "todos") {
-      return [...list].sort((a, b) => {
-        const rank = (c: string) =>
-          c === "cliente" ? 0 : c === "rp" ? 1 : c === "fivem" ? 2 : c === "experimental" ? 3 : 4;
-        return rank(a.category) - rank(b.category);
-      });
-    }
-    return list;
+    if (filter === "todos") return projects;
+    return projects.filter((p) => p.category === filter);
   }, [filter]);
 
   return (

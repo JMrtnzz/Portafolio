@@ -2,9 +2,9 @@ export const site = {
   brand: "RocKG",
   name: "Juanse Martínez",
   githubUser: "JMrtnzz",
-  tagline: "Desarrollador web · Productos digitales",
+  tagline: "Desarrollador Web · FiveM · Automatización · IA",
   description:
-    "Diseño y desarrollo sitios corporativos, herramientas web y automatizaciones listas para producción. Enfocados en claridad, rendimiento y resultados para tu negocio.",
+    "Construyo sitios corporativos, herramientas SaaS, integraciones de streaming, bots y recursos para servidores de roleplay — bajo la marca RocKG.",
   email: "xRocKGx@gmail.com",
   avatar: "https://avatars.githubusercontent.com/u/124746063?v=4",
   links: {

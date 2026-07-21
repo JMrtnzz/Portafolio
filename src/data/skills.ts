@@ -21,14 +21,32 @@ export const skills: SkillGroup[] = [
   },
   {
     title: "Backend y datos",
-    items: ["Node.js", "Python", "Prisma", "PostgreSQL", "SQLite", "Zod", "FastAPI"],
+    items: [
+      "Node.js",
+      "Python",
+      "FastAPI",
+      "Prisma",
+      "PostgreSQL",
+      "SQLite",
+      "Redis",
+      "Zod",
+      "OpenAI",
+    ],
   },
   {
     title: "FiveM y roleplay",
-    items: ["Lua", "FiveM", "QBCore / QBX", "ox_lib", "oxmysql"],
+    items: ["Lua", "FiveM", "QBCore / QBX", "ox_lib"],
   },
   {
-    title: "Herramientas",
-    items: ["Git", "GitHub Actions", "Vercel", "Docker", "Discord.py", "SEO"],
+    title: "Herramientas y despliegue",
+    items: [
+      "Git",
+      "Docker",
+      "GitHub Actions",
+      "Vercel",
+      "ESLint",
+      "Discord.py",
+      "OBS",
+    ],
   },
 ];

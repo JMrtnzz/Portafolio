@@ -4,13 +4,13 @@ const items = [
   "TypeScript",
   "Vue",
   "Tailwind",
-  "SEO",
+  "FastAPI",
   "Vercel",
   "FiveM",
-  "APIs",
+  "Kick",
+  "IA / SaaS",
   "Automatización",
-  "Diseño web",
-  "Landing pages",
+  "Discord bots",
 ];
 
 export function Marquee() {
