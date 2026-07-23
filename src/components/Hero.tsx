@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
-  const letters = site.brand.split("");
+  const letters = site.name.split("");
   const mx = useMotionValue(0.5);
   const my = useMotionValue(0.5);
   const smx = useSpring(mx, { stiffness: 60, damping: 20 });
@@ -57,7 +57,7 @@ export function Hero() {
             <div className="absolute inset-0 rounded-full bg-rockg/30 blur-2xl" aria-hidden />
             <Image
               src="/logo-full.png"
-              alt={`${site.brand} logo`}
+              alt={`${site.name} logo`}
               width={160}
               height={160}
               priority
@@ -72,11 +72,11 @@ export function Hero() {
           transition={{ duration: 0.6, ease }}
           className="mb-4 text-sm uppercase tracking-[0.28em] text-muted"
         >
-          {site.name} · {site.tagline}
+          {site.tagline}
         </motion.p>
 
-        <h1 className="font-display text-[clamp(4.5rem,18vw,11rem)] font-extrabold leading-[0.85] tracking-[-0.04em] text-paper">
-          <span className="sr-only">{site.brand}</span>
+        <h1 className="font-display text-[clamp(2.75rem,10vw,6.5rem)] font-extrabold leading-[0.9] tracking-[-0.04em] text-paper">
+          <span className="sr-only">{site.name}</span>
           <span aria-hidden className="inline-flex flex-wrap">
             {letters.map((letter, i) => (
               <motion.span
@@ -86,7 +86,7 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 0.08 + i * 0.055, ease }}
                 className="inline-block origin-bottom will-change-transform"
               >
-                {letter}
+                {letter === " " ? "\u00A0" : letter}
               </motion.span>
             ))}
           </span>

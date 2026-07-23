@@ -18,22 +18,22 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.brand} · ${site.name}`,
-    template: `%s · ${site.brand}`,
+    default: `${site.name} · Portafolio`,
+    template: `%s · ${site.name}`,
   },
   description: site.description,
   metadataBase: new URL("https://portafolio-nine-blue-65.vercel.app"),
   openGraph: {
-    title: `${site.brand} · ${site.name}`,
+    title: `${site.name} · Portafolio`,
     description: site.description,
     type: "website",
     locale: "es_ES",
-    siteName: site.brand,
-    images: [{ url: "/logo-full.png", width: 512, height: 512, alt: site.brand }],
+    siteName: site.name,
+    images: [{ url: "/logo-full.png", width: 512, height: 512, alt: site.name }],
   },
   twitter: {
     card: "summary",
-    title: `${site.brand} · ${site.name}`,
+    title: `${site.name} · Portafolio`,
     description: site.description,
     creator: "@xRocKGx",
     images: ["/logo-full.png"],

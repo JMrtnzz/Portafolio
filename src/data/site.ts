@@ -4,7 +4,7 @@ export const site = {
   githubUser: "JMrtnzz",
   tagline: "Desarrollador Web · FiveM · Automatización · IA",
   description:
-    "Construyo sitios corporativos, herramientas SaaS, integraciones de streaming, bots y recursos para servidores de roleplay — bajo la marca RocKG.",
+    "Construyo sitios corporativos, herramientas SaaS, integraciones de streaming, bots y recursos para servidores de roleplay.",
   email: "xRocKGx@gmail.com",
   avatar: "https://avatars.githubusercontent.com/u/124746063?v=4",
   links: {

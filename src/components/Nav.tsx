@@ -42,7 +42,7 @@ export function Nav() {
             priority
           />
           <span className="font-display text-lg font-bold tracking-tight text-paper group-hover:text-rockg transition-colors">
-            {site.brand}
+            {site.name}
           </span>
         </a>
 

@@ -16,7 +16,7 @@ export function Footer() {
             className="size-7 rounded-full opacity-90"
           />
           <p className="font-display text-sm font-semibold text-paper">
-            © {year} {site.brand} · {site.name}
+            © {year} {site.name}
           </p>
         </div>
         <p className="text-sm text-muted">{site.tagline}</p>
