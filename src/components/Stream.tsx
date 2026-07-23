@@ -9,12 +9,12 @@ export function Stream() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="mas" className="section-pad border-t border-line py-10 md:py-12">
+    <section id="mas" className="section-pad border-t border-line py-8 sm:py-10 md:py-12">
       <div className="container-narrow">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex w-full items-center justify-between gap-4 text-left"
+          className="flex w-full items-center justify-between gap-4 py-1 text-left"
           aria-expanded={open}
         >
           <div>

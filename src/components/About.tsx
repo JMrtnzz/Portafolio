@@ -23,7 +23,7 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="sobre" className="section-pad py-24 md:py-32">
+    <section id="sobre" className="section-pad section-y">
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 28, clipPath: "inset(12% 0 0 0)" }}
@@ -33,10 +33,10 @@ export function About() {
           className="max-w-2xl"
         >
           <p className="mb-3 text-sm uppercase tracking-[0.22em] text-rockg">Sobre mí</p>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-paper md:text-5xl">
+          <h2 className="font-display text-[1.75rem] font-bold tracking-tight text-paper sm:text-3xl md:text-5xl">
             Productos digitales útiles y bien cuidados.
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-muted sm:mt-5 md:text-lg">
             Desde landings corporativas e institucionales hasta calculadoras, integraciones
             con APIs, bots de Discord, herramientas para Kick y plataformas asistidas por IA.
             Me muevo entre frontend, backend y entornos FiveM, priorizando interfaces claras,
@@ -44,7 +44,7 @@ export function About() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-8 sm:mt-14 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4">
           {pillars.map((item, i) => (
             <motion.article
               key={item.title}
@@ -56,14 +56,14 @@ export function About() {
               className="group"
             >
               <motion.div
-                className="mb-5 h-px w-full origin-left bg-line"
+                className="mb-4 h-px w-full origin-left bg-line sm:mb-5"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 + i * 0.08 }}
               />
               <p className="mb-2 font-display text-xs text-rockg/80">0{i + 1}</p>
-              <h3 className="font-display text-lg font-semibold text-paper transition group-hover:text-rockg">
+              <h3 className="font-display text-lg font-semibold text-paper transition md:group-hover:text-rockg">
                 {item.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{item.text}</p>

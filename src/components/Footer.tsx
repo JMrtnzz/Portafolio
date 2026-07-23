@@ -5,8 +5,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="section-pad border-t border-line py-10">
-      <div className="container-narrow flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="section-pad border-t border-line py-8 pb-[max(2rem,env(safe-area-inset-bottom))] sm:py-10">
+      <div className="container-narrow flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <div className="flex items-center gap-3">
           <Image
             src="/logo-full.png"
@@ -19,7 +19,7 @@ export function Footer() {
             © {year} {site.name}
           </p>
         </div>
-        <p className="text-sm text-muted">{site.tagline}</p>
+        <p className="text-xs leading-relaxed text-muted sm:text-sm">{site.tagline}</p>
       </div>
     </footer>
   );

@@ -30,7 +30,7 @@ function SkillIcon({ skill }: { skill: Skill }) {
 
 export function Skills() {
   return (
-    <section id="stack" className="section-pad py-24 md:py-32">
+    <section id="stack" className="section-pad section-y">
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -39,12 +39,12 @@ export function Skills() {
           transition={{ duration: 0.55 }}
         >
           <p className="mb-3 text-sm uppercase tracking-[0.22em] text-rockg">Stack</p>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-paper md:text-5xl">
+          <h2 className="font-display text-[1.75rem] font-bold tracking-tight text-paper sm:text-3xl md:text-5xl">
             Tecnologías que uso
           </h2>
         </motion.div>
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-2">
+        <div className="mt-10 grid gap-8 sm:mt-14 sm:grid-cols-2 sm:gap-10">
           {skills.map((group, i) => (
             <motion.div
               key={group.title}
@@ -52,7 +52,7 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.07 }}
-              className="border-t border-line pt-6"
+              className="border-t border-line pt-5 sm:pt-6"
             >
               <h3 className="font-display text-lg font-semibold text-paper">{group.title}</h3>
               <ul className="mt-4 flex flex-wrap gap-2">
@@ -64,7 +64,7 @@ export function Skills() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: 0.05 + j * 0.03 }}
                     whileHover={{ y: -2, borderColor: "rgba(225,6,0,0.45)" }}
-                    className="group inline-flex items-center gap-1.5 rounded-sm border border-line px-2.5 py-1 text-sm text-muted transition hover:text-paper"
+                    className="group inline-flex items-center gap-1.5 rounded-sm border border-line px-2.5 py-1.5 text-sm text-muted transition hover:text-paper"
                   >
                     <SkillIcon skill={item} />
                     {item.name}

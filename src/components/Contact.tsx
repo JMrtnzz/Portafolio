@@ -28,7 +28,7 @@ const contacts = [
 
 export function Contact() {
   return (
-    <section id="contacto" className="section-pad py-24 md:py-32">
+    <section id="contacto" className="section-pad section-y">
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
@@ -38,16 +38,16 @@ export function Contact() {
           className="max-w-2xl"
         >
           <p className="mb-3 text-sm uppercase tracking-[0.22em] text-rockg">Contacto</p>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-paper md:text-5xl">
+          <h2 className="font-display text-[1.75rem] font-bold tracking-tight text-paper sm:text-3xl md:text-5xl">
             ¿Tenés un proyecto en mente?
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-muted sm:mt-5 md:text-lg">
             Escribime por email, Discord o X. Abierto a sitios corporativos, SaaS, herramientas
             RP, automatizaciones de stream y recursos FiveM.
           </p>
         </motion.div>
 
-        <ul className="mt-12 grid gap-0 sm:grid-cols-2">
+        <ul className="mt-10 grid gap-0 sm:mt-12 sm:grid-cols-2">
           {contacts.map((item, i) => (
             <motion.li
               key={item.label}
@@ -61,12 +61,12 @@ export function Contact() {
                 href={item.href}
                 target={item.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={item.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                className="group block"
+                className="group block min-w-0"
               >
                 <p className="text-xs uppercase tracking-wider text-muted">{item.label}</p>
-                <p className="mt-1 font-display text-xl font-semibold text-paper transition group-hover:text-rockg">
+                <p className="mt-1 break-all font-display text-lg font-semibold text-paper transition sm:text-xl md:group-hover:text-rockg">
                   {item.value}
-                  <span className="ml-2 inline-block translate-x-0 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100">
+                  <span className="ml-2 inline-block translate-x-0 opacity-40 transition md:opacity-0 md:group-hover:translate-x-1 md:group-hover:opacity-100">
                     →
                   </span>
                 </p>
@@ -82,7 +82,7 @@ export function Contact() {
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="mt-10 inline-flex rounded-sm bg-rockg px-6 py-3.5 text-sm font-semibold text-paper transition hover:brightness-110"
+          className="mt-8 inline-flex min-h-11 w-full items-center justify-center rounded-sm bg-rockg px-6 py-3.5 text-sm font-semibold text-paper transition hover:brightness-110 sm:mt-10 sm:w-auto"
         >
           Enviar email
         </motion.a>
